@@ -9,7 +9,8 @@ license = {text = "MIT"}
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
-    "requests (>=2.32.3,<3.0.0)"
+    "requests (>=2.32.3,<3.0.0)",
+    "httpx (>=0.28.1,<0.29.0)"
 ]
 packages = [{ include = "ipl_api", from = "src" }]
 
