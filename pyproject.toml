@@ -12,7 +12,7 @@ dependencies = [
     "requests (>=2.32.3,<3.0.0)",
     "httpx (>=0.28.1,<0.29.0)"
 ]
-packages = [{ include = "ipl_api", from = "src" }]
+packages = [{ include = "nfl_api", from = "src" }]
 
 
 [build-system]

@@ -42,7 +42,7 @@ class TeamID(Enum):
     Season types => Preseason, Regular season, Postseason, Offseason
 '''
 class SeasonType(Enum):
-    PRE = 1
-    REG = 2
-    POST = 3 
-    OFF = 4 
+    PRE_SEASON = 1
+    REGULAR_SEASON = 2
+    POST_SEASON = 3 
+    OFF_SEASON = 4 
