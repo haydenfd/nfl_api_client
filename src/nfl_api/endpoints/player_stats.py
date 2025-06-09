@@ -59,6 +59,7 @@ import time
 
 async def fetch_player_season_stats(client, athlete_id, season, season_type=2):
     url = f"https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/{season}/types/{season_type}/athletes/{athlete_id}/statistics"
+    print(url)
     response = await client.get(url, params={"lang": "en", "region": "us"})
     response.raise_for_status()
     return response.json()

@@ -4,7 +4,7 @@
 # endpoint => http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/{YYYY}/draft/rounds
 
 from nfl_api.endpoints._base import Endpoint
-from nfl_api.lib.domain_registry import EspnBaseDomain
+from nfl_api.lib.endpoint_registry import EspnBaseDomain
 
 class DraftSummary(Endpoint):
 

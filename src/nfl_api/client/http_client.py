@@ -15,7 +15,7 @@ class EspnRequestService:
     def __init__(self, base_url: EspnBaseDomain, timeout: int = 30, headers: dict = None, proxy: str = None):
         self.base_url = base_url.value.rstrip("/")
         self.timeout = timeout
-        self.proxy = proxy  # kept for future use
+        self.proxy = proxy 
         self.headers = headers or HEADERS_CONFIG
 
     def send_request(self, path: str, params=None):

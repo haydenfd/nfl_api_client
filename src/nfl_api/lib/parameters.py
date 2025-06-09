@@ -46,3 +46,11 @@ class SeasonType(Enum):
     REGULAR_SEASON = 2
     POST_SEASON = 3 
     OFF_SEASON = 4 
+
+'''
+    Mapping for conference types to values
+    Conferences => AFC, NFC
+'''
+class ConferenceType(Enum):
+    AFC = 8
+    NFC = 9

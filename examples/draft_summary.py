@@ -1,4 +1,5 @@
 from nfl_api.endpoints.draft_summary import DraftSummary
+
 # from nfl_api.lib.data import players
 import re
 from nfl_api.lib.parameters import TeamID

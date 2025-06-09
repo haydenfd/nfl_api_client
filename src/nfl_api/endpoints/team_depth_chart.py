@@ -1,12 +1,10 @@
-# src/nfl_api/endpoints/depth_chart.py
+# src/nfl_api/endpoints/team_depth_chart.py
 
-from nfl_api.endpoints._base import Endpoint
-from nfl_api.lib.domain_registry import EspnBaseDomain
+from nfl_api.lib.endpoint_registry import ENDPOINT_REGISTRY
+from nfl_api.endpoints._base import EndpointBase
+from nfl_api.lib.parsers.team_depth_chart import TeamDepthChartParser
 
-class TeamDepthChart(Endpoint):
-    base_domain = EspnBaseDomain.CORE 
-    endpoint: str
-
-    def __init__(self, team_id: int, season: int = 2024, **kwargs):
-        self.endpoint = f"sports/football/leagues/nfl/seasons/{season}/teams/{team_id}/depthcharts"
-        super().__init__(**kwargs)
+class TeamDepthChart(EndpointBase):
+    def __init__(self, team_id: int, year: int):
+        url = ENDPOINT_REGISTRY["TEAM_DEPTH_CHART"].format(team_id=team_id, year=year)
+        super().__init__(url, parser=TeamDepthChartParser)
