@@ -17,6 +17,7 @@ class EndpointBase:
         self.headers = headers or HEADERS_CONFIG
         self.timeout = timeout or 30
         self.data = None
+        self.raw_json = None
         self._fetch_and_parse()
 
     def get_url(self):
@@ -32,6 +33,10 @@ class EndpointBase:
         import pandas as pd
         return pd.DataFrame(self.data)
     
+    # For testing the raw JSON returned from ESPN endpoints
+    def get_raw_json(self):
+        return self.raw_json
+    
     def _fetch_and_parse(self):
         response = httpx.get(
             self.url,
@@ -40,8 +45,8 @@ class EndpointBase:
             timeout=self.timeout,
         )
         response.raise_for_status()
-        json_data = response.json()
-        self.data = self.parser(json_data) if self.parser else json_data   
+        self.raw_json = response.json()
+        self.data = self.parser(self.raw_json) if self.parser else self.raw_json   
 
     
 
