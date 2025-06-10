@@ -1,20 +1,22 @@
 [project]
-name = "nfl-api"
+name = "nfl-api-client"
 version = "0.1.0"
-description = "API client package for accessing NFL data on ESPN's API endpoints"
+description = "API client library for accessing NFL data on ESPN's API endpoints"
 authors = [
-    {name = "Hayden D'Souza"}
+    {name = "Hayden D'Souza haydenfds@gmail.com"}
 ]
 license = {text = "MIT"}
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.8"
 dependencies = [
-    "requests (>=2.32.3,<3.0.0)",
     "httpx (>=0.28.1,<0.29.0)",
     "pandas (>=2.3.0,<3.0.0)"
 ]
-packages = [{ include = "nfl_api", from = "src" }]
+keywords = ["nfl", "espn", "api", "football", "sports", "betting"]
+packages = [{ include = "nfl_api_client", from = "src" }]
 
+[project.urls]
+Repository = "https://github.com/haydenfd/nfl-api"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

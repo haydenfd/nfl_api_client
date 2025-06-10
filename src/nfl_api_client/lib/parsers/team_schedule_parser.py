@@ -1,5 +1,5 @@
 import re
-from nfl_api.lib.utils import format_date_str
+from nfl_api_client.lib.utils import format_date_str
 
 pattern = re.compile(r'([A-Z]{2,4})\s+[@V]{1,2}\s+([A-Z]{2,4})')
 

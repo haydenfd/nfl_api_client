@@ -1,5 +1,5 @@
 import re
-from nfl_api.lib.data import players, player_id_idx, player_full_name_idx
+from nfl_api_client.lib.data import players, player_id_idx, player_full_name_idx
 
 pattern = re.compile(r'/athletes/(\d+)')
 

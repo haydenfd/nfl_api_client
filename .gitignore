@@ -26,3 +26,7 @@ pytest_cache/
 *.log
 
 debug_storage/
+
+/dist/
+/build/
+/*.egg-info
