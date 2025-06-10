@@ -1,8 +1,8 @@
 # src/nfl_api/endpoints/team_schedule.py
 
-from nfl_api.lib.endpoint_registry import ENDPOINT_REGISTRY
-from nfl_api.endpoints._base import EndpointBase
-from nfl_api.lib.parsers.team_schedule_parser import TeamScheduleParser
+from nfl_api_client.lib.endpoint_registry import ENDPOINT_REGISTRY
+from nfl_api_client.endpoints._base import EndpointBase
+from nfl_api_client.lib.parsers.team_schedule_parser import TeamScheduleParser
 
 class TeamSchedule(EndpointBase):
 

@@ -1,4 +1,4 @@
-from nfl_api.static.players import (
+from nfl_api_client.static.players import (
     find_players_by_first_name,
     find_players_by_last_name,
     find_players_by_full_name,

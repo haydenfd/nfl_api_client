@@ -1,7 +1,7 @@
-from nfl_api.endpoints.draft_summary import DraftSummary
+from nfl_api_client.endpoints.draft_summary import DraftSummary
 
 import re
-from nfl_api.lib.parameters import TeamID
+from nfl_api_client.lib.parameters import TeamID
 
 athlete_pattern = re.compile(r'/athletes/(\d+)')
 team_pattern = re.compile(r'/teams/(\d+)')

@@ -3,8 +3,8 @@
 # team field contains an object to a ref like this  "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2024/teams/2?lang=en&region=us". Can parse the team id from the url and fetch the team abbreviation from TeamId type by reversal
 # "records" is a list of objects, but for now just focus on the first object. It has "displayValue" and "value", displayValue is string of overall record and "value" is float of winningPercent. Return back the displayValue as overall_record, and value as winning_percent w/ the float truncated to only have the 0.764 instead of 0.764705
 import httpx
-from nfl_api.lib.parameters import TeamID
-from nfl_api.lib.endpoint_registry import ENDPOINT_REGISTRY
+from nfl_api_client.lib.parameters import TeamID
+from nfl_api_client.lib.endpoint_registry import ENDPOINT_REGISTRY
 import pandas as pd
 
 class SeasonStandings:

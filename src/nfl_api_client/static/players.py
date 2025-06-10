@@ -1,6 +1,6 @@
 import re
 import unicodedata
-from nfl_api.lib.data import (
+from nfl_api_client.lib.data import (
     players,
     player_id_idx,
     player_first_name_idx,

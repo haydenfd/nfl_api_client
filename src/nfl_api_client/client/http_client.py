@@ -1,7 +1,7 @@
 import httpx
 import asyncio
 from typing import List
-from nfl_api.lib.domain_registry import EspnBaseDomain
+from nfl_api_client.lib.endpoint_registry import EspnBaseDomain
 
 HEADERS_CONFIG = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0',
