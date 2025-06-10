@@ -1,23 +1,28 @@
-import httpx 
 import json
-
-HEADERS_CONFIG = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                  "AppleWebKit/537.36 (KHTML, like Gecko) "
-                  "Chrome/123.0.0.0 Safari/537.36",
-    "Accept": "application/json",
-    "Accept-Language": "en-US,en;q=0.9",
-}
+from nfl_api_client._client._http_client import HttpxRequestService
+from typing import Optional, Dict
 
 class EndpointBase:
-    def __init__(self, url, parser = None, proxy = None, headers = None, timeout = None):
-        self.url = url
+    def __init__(
+            self, 
+            url:str,
+            parser = None, 
+            proxy = None, 
+            headers:Optional[Dict[str, str]] = None, 
+            timeout:Optional[int] = None
+        ):
+        self.url: str = url
         self.parser = parser
         self.proxy = proxy
-        self.headers = headers or HEADERS_CONFIG
+        self.headers:Optional[Dict[str, str]] = headers 
         self.timeout = timeout or 30
         self.data = None
         self.raw_json = None
+        self.request_service: HttpxRequestService = HttpxRequestService(
+            headers,
+            timeout,
+            proxy,
+        )
         self._fetch_and_parse()
 
     def get_url(self):
@@ -38,15 +43,8 @@ class EndpointBase:
         return self.raw_json
     
     def _fetch_and_parse(self):
-        response = httpx.get(
-            self.url,
-            # proxies=self.proxy,
-            headers=self.headers,
-            timeout=self.timeout,
-        )
-        response.raise_for_status()
-        self.raw_json = response.json()
-        self.data = self.parser(self.raw_json) if self.parser else self.raw_json   
+        self.raw_json = self.request_service.send_request(self.url)
+        self.data = self.parser(self.raw_json) if self.parser else self.raw_json
 
     
 
