@@ -1,4 +1,4 @@
-from nfl_api.lib.utils import format_date_str
+from nfl_api_client.lib.utils import format_date_str
 
 def TeamRosterParser(json_data):
     data = []
