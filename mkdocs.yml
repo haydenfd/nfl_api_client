@@ -1,0 +1,51 @@
+site_name: NFL API Client
+site_url: https://your-docs-site.dev
+
+nav:
+  - Home: index.md
+  - API Reference:
+    - Overview: api_reference.md
+    - Endpoints:
+        - Team Roster: team_roster.md
+        - Team Depth Chart: team_depth_chart.md
+    - Parameters: parameters.md
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+
+watch:
+  - src
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+
+# Theme config 
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+  palette:
+    - scheme: slate
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+    - scheme: default
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+  font: 
+    text: Inter
+    code: Fira Code
+
+extra_css:
+  - custom-styles.css
