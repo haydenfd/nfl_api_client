@@ -11,5 +11,11 @@ This package is currently in active development. While many endpoints are implem
 
 ## Installation
 
-This package requires Python 3.9+ and uses `httpx` and `pandas` as dependencies for fetching and processing the data.
+This package requires Python `3.9+` and uses `httpx` and `pandas` as dependencies for fetching and processing the data.
+
+To install the package and its dependencies, run 
+
+```python
+pip install nfl-api-client
+```
 
