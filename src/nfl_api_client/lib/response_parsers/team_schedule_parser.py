@@ -1,10 +1,15 @@
 import re
+from typing import Dict, List
 from nfl_api_client.lib.utils import format_date_str
 
 pattern = re.compile(r'([A-Z]{2,4})\s+[@V]{1,2}\s+([A-Z]{2,4})')
 
-def TeamScheduleParser(data):
+def TeamScheduleParser(data: dict) -> Dict[str, List[Dict]]:
+    """
+    Parses ESPN team schedule data into a structured dictionary with one dataset: "SCHEDULE".
+    """
     parsed = []
+
     for event in data.get("events", []):
         game_id = event.get("id")
         title = event.get("shortName")
@@ -21,11 +26,12 @@ def TeamScheduleParser(data):
                 home_team, away_team = team1, team2
 
         parsed.append({
-            "game_id": game_id,
-            "week_number": week_number,
-            "name": title,
-            "date": format_date_str(date),
-            "home_team": home_team,
-            "away_team": away_team
+            "WEEK_NUMBER": week_number,
+            "DATE": format_date_str(date),
+            "GAME_ID": game_id,
+            "GAME_TITLE": title,
+            "HOME_TEAM": home_team,
+            "AWAY_TEAM": away_team,
         })
-    return parsed
+
+    return {"TEAM_SCHEDULE": parsed}

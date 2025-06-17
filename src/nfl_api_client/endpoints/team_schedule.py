@@ -1,13 +1,36 @@
-# src/nfl_api/endpoints/team_schedule.py
-
 from nfl_api_client.lib.endpoint_registry import ENDPOINT_REGISTRY
-from nfl_api_client.endpoints._base import EndpointBase
-from nfl_api_client.lib.parsers.team_schedule_parser import TeamScheduleParser
+from nfl_api_client.endpoints._base import BaseEndpoint
+from nfl_api_client.lib.response_parsers.team_schedule_parser import TeamScheduleParser
+from nfl_api_client.lib.parameters import TeamID
+from typing import Union, Optional, Dict
 
-class TeamSchedule(EndpointBase):
-
+class TeamSchedule(BaseEndpoint):
+   
     BASE_URL = ENDPOINT_REGISTRY["TEAM_SCHEDULE"]
 
-    def __init__(self, team_id: int, year: int):
-        url = self.BASE_URL.format(team_id=team_id) + f"?season={year}"
-        super().__init__(url=url, parser=TeamScheduleParser)
+    def __init__(
+            self, 
+            team_id: Union[int, TeamID], 
+            year: int = 2025,
+            *,
+            headers: Optional[Dict[str, str]] = None,
+            proxy: Optional[str] = None,
+            timeout: Optional[int] = None,                        
+        ):
+
+        if isinstance(team_id, TeamID):
+            team_id = team_id.value
+
+        url = self.BASE_URL.format(team_id=team_id, year=year)
+        super().__init__(
+            url=url, 
+            parser=TeamScheduleParser,
+            headers=headers,
+            proxy=proxy,
+            timeout = timeout,
+        )
+
+# schedule = TeamSchedule(team_id=TeamID.KC, year=2024)
+# schedule.get_data_sets()
+# df = schedule.get_dataset("TEAM_SCHEDULE").get_data_frame()        
+# print(df)
