@@ -6,8 +6,14 @@ nav:
   - API Reference:
     - Overview: api_reference.md
     - Endpoints:
+        - Player Career Statistics: player_career_stats.md
         - Team Roster: team_roster.md
         - Team Depth Chart: team_depth_chart.md
+        - Team Schedule: team_schedule.md
+        - Season Statistics Leaders: stats_leaders.md
+        - Season Standings (Basic): season_standings.md
+        - Season Standings (Expanded): season_standings_expanded.md
+        - Season Standings (Playoff Picture): season_standings_playoffs.md
     - Parameters: parameters.md
 
 plugins:
@@ -22,6 +28,15 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences     
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
 
 # Theme config 
 
@@ -29,23 +44,24 @@ theme:
   name: material
   features:
     - navigation.tabs
+    - content.code.copy
   palette:
     - scheme: slate
-      primary: blue
-      accent: indigo
+      primary: indigo
+      accent: lime
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
 
     - scheme: default
-      primary: blue
+      primary: deep orange
       accent: indigo
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
   font: 
     text: Inter
-    code: Fira Code
+    code: IBM Plex
 
 extra_css:
   - custom-styles.css
