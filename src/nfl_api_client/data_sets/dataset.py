@@ -19,20 +19,20 @@ class DataSet:
             data: List[Dict[str, Any]],
             headers: Optional[List[str]] = None, # TODO: Maybe omit?
     ):
-        self.name = name
+        self._name = name
         self.data = data
         self.headers = headers
 
     @property
     def name(self) -> str:
-        return self.name
+        return self._name
     
     def get_json(self) -> str:
         return json.dumps(self.data, indent=2)
     
     # TODO: Maybe reformat
-    def get_dict(self) -> Dict[str, Any]:
-        return {"name": self.name, "data": self.data}
+    def get_dict(self) -> List[Dict]:
+        return self.data
     
     def get_data_frame(self) -> Optional[DataFrame]:
         if not pandas:
@@ -45,3 +45,9 @@ class DataSet:
             return DataFrame(self.data)[self.headers]
         return DataFrame(self.data)
     
+    def get_headers(self) -> List[str]:
+        if self.headers:
+            return self.headers
+        if self.data:
+            return list(self.data[0].keys())
+        return []
