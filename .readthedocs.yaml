@@ -30,6 +30,7 @@ build:
 python:
   install:
     - method: poetry
+    - path: .
 
 mkdocs:
   configuration: mkdocs.yml
