@@ -19,3 +19,8 @@ To install the package and its dependencies, run
 pip install nfl-api-client
 ```
 
+## License & Disclaimer
+
+This package is provided for use under the MIT license.  
+
+ESPN's current TOS doesn't seem to prohibit the use or publishing of such a package, but nevertheless, please be responsible when using it. 

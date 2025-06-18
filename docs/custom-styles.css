@@ -1,4 +1,27 @@
-table td, table th {
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 0.4em 0.8em;
-  }
+/* Stretch table to full width */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  table-layout: auto; /* Or 'fixed' for equal column widths */
+}
+
+/* Cell padding and border (your current style) */
+table td,
+table th {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.4em 0.8em;
+  vertical-align: top;
+}
+
+/* Optional: center-align second column (e.g. 'Type') */
+table td:nth-child(2),
+table th:nth-child(2) {
+  text-align: center;
+}
+
+/* Optional: style header background for clarity */
+table th {
+  background-color: rgba(255, 255, 255, 0.05); /* or darker if too light */
+}
+
