@@ -15,6 +15,7 @@ nav:
         - Season Standings (Expanded): season_standings_expanded.md
         - Season Standings (Playoff Picture): season_standings_playoffs.md
     - Parameters: parameters.md
+  - CHANGELOG: CHANGELOG.md
 
 plugins:
   - search
@@ -37,6 +38,8 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - pymdownx.details
+  
 
 # Theme config 
 
