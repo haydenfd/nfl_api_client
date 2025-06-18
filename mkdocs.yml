@@ -1,8 +1,13 @@
 site_name: NFL API Client
-site_url: https://your-docs-site.dev
+site_url: https://nfl-api-client.readthedocs.io/
+
+
+repo_url: https://github.com/haydenfd/nfl_api_client
+repo_name: haydenfd/nfl_api_client
 
 nav:
   - Home: index.md
+  - Guide: guide.md
   - API Reference:
     - Overview: api_reference.md
     - Endpoints:
@@ -45,6 +50,9 @@ markdown_extensions:
 
 theme:
   name: material
+  icon:
+    logo: material/football
+    favicon: material/football  
   features:
     - navigation.tabs
     - content.code.copy
