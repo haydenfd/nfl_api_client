@@ -5,7 +5,14 @@ build:
   tools: 
     python: "3.9"
 
+  jobs:
+    pre_install:
+      - curl -sSL https://install.python-poetry.org | python3 -
+      - export PATH="$HOME/.local/bin:$PATH"
+      - poetry config virtualenvs.create false
+
+    install:
+      - poetry install --no-root
+      
 mkdocs:
   configuration: mkdocs.yml
-
-  
