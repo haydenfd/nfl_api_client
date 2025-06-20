@@ -27,6 +27,7 @@ class HttpxRequestService:
     
 
     def send_request(self, url: str) -> Union[Dict, None]:
+        # print("RAN")
         try:
             with httpx.Client(
                 headers=self.headers,
@@ -34,7 +35,9 @@ class HttpxRequestService:
                 timeout=self.timeout,
             ) as client:
                 response = client.get(url)
+                # print(url)
                 response.raise_for_status()
+                # print(response.json())
                 return response.json()
             
         except httpx.HTTPStatusError as e: 
