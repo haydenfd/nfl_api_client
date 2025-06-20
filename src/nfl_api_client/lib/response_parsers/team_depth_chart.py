@@ -30,11 +30,11 @@ def TeamDepthChartParser(json_data) -> Dict[str, List[Dict]]:
 
                 if athlete_id:
                     chart[group_key].append({
-                        "PLAYER_ID": athlete_id,
-                        "PLAYER_NAME": player_name,
-                        "POSITION_NAME": display_name,
-                        "POSITION_ABBREVIATION": abbreviation,
-                        "RANK": rank,
+                        "player_id": athlete_id,
+                        "player_name": player_name,
+                        "position_name": display_name,
+                        "position_abbreviation": abbreviation,
+                        "rank": rank,
                     })
 
     return chart

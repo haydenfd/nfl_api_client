@@ -59,7 +59,7 @@ class TeamDepthChart(BaseEndpoint):
     def __init__(
             self, 
             team_id: Union[int, TeamID], 
-            year: int,
+            year: int = 2025,
             *,
             headers: Optional[Dict[str, str]] = None,
             proxy: Optional[str] = None,
@@ -68,6 +68,10 @@ class TeamDepthChart(BaseEndpoint):
 
         if isinstance(team_id, TeamID):
             team_id = team_id.value        
+
+        valid_team_ids = {team.value for team in TeamID}
+        if team_id not in valid_team_ids:
+            raise ValueError(f"team_id: {team_id} is not a valid ID. Look at Parameters > TeamID for more.")            
 
         url = ENDPOINT_REGISTRY["TEAM_DEPTH_CHART"].format(team_id=team_id, year=year)
         super().__init__(
