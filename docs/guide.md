@@ -5,6 +5,16 @@ This guide will go over how to use each endpoint to access data, and what the da
 
 ## **Package Structure**
 
+??? info "Package Structure Overview"
+
+    ```mermaid
+    graph LR
+      A[Specific Endpoint Class] --> B[Parses Raw Response]
+      B --> C[Each 'Grouping' is a DataSet]
+      C --> D[Returns List of DataSets]
+    ```
+
+
 Each class invocation => Specific endpoint -> RequestService makes HTTP call -> Response is parsed -> Data is stored in a Dataset container -> Each segmented data set is its own "object".
 
 ??? note "Under the hood"

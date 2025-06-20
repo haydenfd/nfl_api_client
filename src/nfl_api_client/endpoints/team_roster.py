@@ -76,6 +76,7 @@ class TeamRoster(BaseEndpoint):
         valid_team_ids = {team.value for team in TeamID}
         if team_id not in valid_team_ids:
             raise ValueError(f"team_id: {team_id} is not a valid ID. Look at Parameters > TeamID for more.")
+        
         url = ENDPOINT_REGISTRY["TEAM_ROSTER"].format(team_id=team_id)
         super().__init__(
             url, 

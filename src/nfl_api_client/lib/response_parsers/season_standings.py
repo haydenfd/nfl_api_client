@@ -13,18 +13,18 @@ def _extract_team_data(entry: Dict[str, Any]) -> Dict[str, Any]:
     stats = entry.get("stats", [])
 
     team_data = {
-        "TEAM_ID": team.get("id"),
-        "TEAM_NAME": team.get("displayName"),
-        "TEAM_ABBREVIATION": team.get("abbreviation"),
-        "SEED": team.get("seed"),
-        "CLINCHER": CLINCHER_MAP.get(team.get("clincher"), team.get("clincher")),
+        "team_id": team.get("id"),
+        "team_code": team.get("abbreviation"),
+        "team_name": team.get("displayName"),
+        "conference_seed": team.get("seed"),
+        "clincher": CLINCHER_MAP.get(team.get("clincher"), team.get("clincher")),
     }
 
     for stat in stats:
-        name = stat.get("shortDisplayName")
-        value = stat.get("displayValue")
+        name = stat.get("abbreviation")
+        value = stat.get("displayValue") or "0-0"
         if name and value is not None:
-            team_data[name.upper()] = value
+            team_data[name.lower()] = value
 
     return team_data
 

@@ -4,6 +4,8 @@ from nfl_api_client.lib.utils import extract_id_from_ref
 from nfl_api_client.lib.data import players, player_id_idx, player_full_name_idx
 from nfl_api_client.lib.parameters import TeamID
 
+def to_snake_upper(name: str) -> str:
+    return re.sub(r"(?<=[a-zA-Z])(?=[A-Z])", "_", name).upper()
 
 def StatsLeadersParser(response_json: dict) -> Dict[str, List[Dict]]:
     """
@@ -21,7 +23,7 @@ def StatsLeadersParser(response_json: dict) -> Dict[str, List[Dict]]:
     parsed = {}
 
     for category in categories:
-        name = category["name"].upper()
+        name = to_snake_upper(category["name"])
         leaders = []
 
         for leader in category.get("leaders", []):
@@ -37,11 +39,11 @@ def StatsLeadersParser(response_json: dict) -> Dict[str, List[Dict]]:
                 team_abbr = f"Team {team_id}"
 
             leaders.append({
-                "PLAYER_ID": player_id,
-                "PLAYER_NAME": player_name,
-                "TEAM_ID": team_id,
-                "TEAM_ABBREVIATION": team_abbr,
-                "VALUE": value,
+                "player_id": player_id,
+                "player_name": player_name,
+                "team_id": team_id,
+                "team_code": team_abbr,
+                "value": value,
             })
 
         parsed[name] = leaders

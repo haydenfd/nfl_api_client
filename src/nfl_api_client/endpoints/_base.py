@@ -4,25 +4,30 @@ from typing import Optional, Callable, Dict, Any, List, Union
 from nfl_api_client.http_client.request_service import HttpxRequestService
 from nfl_api_client.data_sets.dataset import DataSet
 from nfl_api_client.data_sets.dataset_container import DataSetContainer
-
 import pandas as pd
-
-from nfl_api_client.http_client.request_service import HttpxRequestService
-from nfl_api_client.data_sets.dataset import DataSet
-from nfl_api_client.data_sets.dataset_container import DataSetContainer
 
 
 class BaseEndpoint:
     def __init__(
         self,
-        url: str,
+        url: Optional[str] = None,
         *,
         parser: Optional[Callable[[Dict[str, Any]], Union[Dict[str, List[Dict]], List[Dict]]]] = None,
+        intermediate_loader: Optional[Callable[[], Dict[str, Any]]] = None,
+        url_template: Optional[str] = None,
         proxy: Optional[str] = None,
         headers: Optional[Dict[str, str]] = None,
         timeout: Optional[int] = 10
     ):
-        self.url = url
+        if intermediate_loader and url_template:
+            # compute the actual URL from template + intermediate context
+            context = intermediate_loader()
+            self.url = url_template.format(**context)
+        elif url:
+            self.url = url
+        else:
+            raise ValueError("Either 'url' or both 'url_template' and 'intermediate_loader' must be provided.")
+
         self.parser = parser
         self.proxy = proxy
         self.headers = headers
@@ -32,6 +37,7 @@ class BaseEndpoint:
 
         self.request_service = HttpxRequestService(headers=self.headers, timeout=self.timeout, proxy=self.proxy)
         self._fetch_and_parse()
+
 
     def _fetch_and_parse(self):
         self.raw_json = self.request_service.send_request(self.url)

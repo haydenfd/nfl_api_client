@@ -50,7 +50,7 @@ df = bengals_schedule.get_dataset("TEAM_SCHEDULE").get_data_frame()
 
 #### TEAM_SCHEDULE
 
-```
+```python
 [
     "game_id",        
     "week_number", 

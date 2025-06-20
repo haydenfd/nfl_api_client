@@ -1,9 +1,12 @@
 from enum import Enum
 
-'''
-    Mapping for team abbreviations to team IDs
-'''
 class TeamID(Enum):
+    """
+    Enum representing ESPN team IDs for each NFL franchise.
+
+    The member name is the team's abbreviation (e.g. 'KC' for Kansas City),
+    and the value is the corresponding ESPN team ID.
+    """
     ATL = 1
     BUF = 2
     CHI = 3
@@ -37,20 +40,21 @@ class TeamID(Enum):
     BAL = 33
     HOU = 34
 
+    
 '''
     Mapping for season types to season values
     Season types => Preseason, Regular season, Postseason, Offseason
 '''
-class SeasonType(Enum):
-    PRE_SEASON = 1
-    REGULAR_SEASON = 2
-    POST_SEASON = 3 
-    OFF_SEASON = 4 
+class SeasonTypeID(Enum):
+    PRE = 1
+    REG = 2
+    POST = 3 
+    OFF = 4 
 
 '''
     Mapping for conference types to values
     Conferences => AFC, NFC
 '''
-class ConferenceType(Enum):
+class ConferenceID(Enum):
     AFC = 8
     NFC = 9

@@ -28,11 +28,11 @@ def _find_players(regex_pattern, row_idx):
 
 def _get_player_dict(player_row):
     return {
-        "id": player_row[player_id_idx],
-        "full_name": player_row[player_full_name_idx],
-        "first_name": player_row[player_first_name_idx],
-        "last_name": player_row[player_last_name_idx],
-        "is_active": player_row[player_active_idx],
+        "PLAYER_ID": player_row[player_id_idx],
+        "FULL_NAME": player_row[player_full_name_idx],
+        "FIRST_NAME": player_row[player_first_name_idx],
+        "LAST_NAME": player_row[player_last_name_idx],
+        "IS_ACTIVE": player_row[player_active_idx],
     }
 
 
