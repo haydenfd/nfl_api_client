@@ -1,6 +1,6 @@
 from nfl_api_client.lib.endpoint_registry import ENDPOINT_REGISTRY
 from nfl_api_client.endpoints._base import BaseEndpoint
-from nfl_api_client.lib.response_parsers.team_schedule_parser import TeamScheduleParser
+from nfl_api_client.lib.response_parsers.team_schedule import TeamScheduleParser
 from nfl_api_client.lib.parameters import TeamID
 from typing import Union, Optional, Dict
 
@@ -30,7 +30,7 @@ class TeamSchedule(BaseEndpoint):
             timeout = timeout,
         )
 
-# schedule = TeamSchedule(team_id=TeamID.KC, year=2024)
+# schedule = TeamSchedule(team_id=TeamID.KC, year=2025)
 # schedule.get_data_sets()
-# df = schedule.get_dataset("TEAM_SCHEDULE").get_data_frame()        
+# df = schedule.get_dataset("TEAM_SCHEDULE").get_data_frame()   
 # print(df)
