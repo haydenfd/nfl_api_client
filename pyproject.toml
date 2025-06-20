@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
     "httpx (>=0.28.1,<0.29.0)",
-    "pandas (>=2.3.0,<3.0.0)"
+    "pandas (>=2.3.0,<3.0.0)",
 ]
 keywords = ["nfl", "espn", "api", "football", "sports", "betting"]
 packages = [{ include = "nfl_api_client", from = "src" }]
@@ -27,4 +27,9 @@ black = "^25.1.0"
 mkdocs = "^1.6.1"
 mkdocstrings = {extras = ["python"], version = "^0.29.1"}
 mkdocs-material = "^9.6.14"
+mkdocs-mermaid2-plugin = "^1.1.1"
+pytest = "^8.4.1"
 
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

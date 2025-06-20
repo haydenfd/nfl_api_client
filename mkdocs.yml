@@ -31,12 +31,16 @@ watch:
   - src
 
 markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - admonition
   - toc:
       permalink: true
   - pymdownx.highlight:
       anchor_linenums: true
-  - pymdownx.superfences     
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
