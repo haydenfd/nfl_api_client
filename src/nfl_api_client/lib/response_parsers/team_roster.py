@@ -14,25 +14,24 @@ def TeamRosterParser(json_data):
                     pass
 
             data.append({
-                "PLAYER_ID": player.get("id"),
-                "FIRST_NAME": player.get("firstName"),
-                "LAST_NAME": player.get("lastName"),
-                "FULL_NAME": player.get("fullName"),
-                "WEIGHT": int(player.get("weight")),
-                "HEIGHT": int(player.get("height")),
-                "AGE": player.get('age'), 
-                "DOB": date or None,
-                "DEBUT_YEAR": player.get("debutYear") or None,
-                "COLLEGE": player.get("college", {}).get("name"),
-                "JERSEY_NUMBER": player.get("jersey"),
-                "POSITION_NAME": player.get("position", {}).get("displayName"),
-                "POSITION_ABBREVIATION": player.get("position", {}).get("abbreviation"),
-                "POSITION_TYPE": player.get("position", {}).get("parent", {}).get("abbreviation"),
-                "EXPERIENCE": player.get("experience", {}).get("years", {}) or 0,
-                "SLUG": player.get("slug"),
-                "IMAGE_URL": player.get("headshot", {}).get("href", {}),
+                "player_id": int(player.get("id")),
+                "first_name": player.get("firstName"),
+                "last_name": player.get("lastName"),
+                "full_name": player.get("fullName"),
+                "weight": int(player.get("weight")),
+                "height": int(player.get("height")),
+                "age": player.get('age'), 
+                "dob": date or None,
+                "debut_year": player.get("debutYear") or None,
+                "college": player.get("college", {}).get("name"),
+                "jersey_number": player.get("jersey"),
+                "position_name": player.get("position", {}).get("displayName"),
+                "pos_abbreviation": player.get("position", {}).get("abbreviation"),
+                "position_type": player.get("position", {}).get("parent", {}).get("abbreviation"),
+                "experience": player.get("experience", {}).get("years", {}) or 0,
+                "image_url": player.get("headshot", {}).get("href", {}),
             })
     
     return {
-        "ROSTER": data  
+        "TEAM_ROSTER": data  
     }
