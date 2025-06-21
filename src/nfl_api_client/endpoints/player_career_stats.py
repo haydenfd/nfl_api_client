@@ -29,5 +29,5 @@ class PlayerCareerStats(BaseEndpoint):
 
 
 if __name__ == "__main__":
-    leaders = PlayerCareerStats(player_id=15847)
-    print(leaders.get_dataset("DEFENSE").get_data_frame())
+    leaders = PlayerCareerStats(player_id=3139477)
+    print(leaders.get_dataset("RECEIVING").get_data_frame())

@@ -24,8 +24,8 @@ class GameOfficials(BaseEndpoint):
             timeout=timeout,
         )
 
-# game_officials = GameOfficials(401671889)
-# print(game_officials.get_dataset("GAME_OFFICIALS").get_data_frame())
+game_officials = GameOfficials(401671889)
+print(game_officials.get_dataset("GAME_OFFICIALS").get_data_frame())
 
 
 
