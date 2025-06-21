@@ -41,7 +41,7 @@ class TeamID(Enum):
     Mapping for season types to season values
     Season types => Preseason, Regular season, Postseason, Offseason
 '''
-class SeasonType(Enum):
+class SeasonTypeID(Enum):
     PRE_SEASON = 1
     REGULAR_SEASON = 2
     POST_SEASON = 3 
@@ -51,6 +51,6 @@ class SeasonType(Enum):
     Mapping for conference types to values
     Conferences => AFC, NFC
 '''
-class ConferenceType(Enum):
+class ConferenceTypeID(Enum):
     AFC = 8
     NFC = 9
