@@ -1,6 +1,3 @@
-# Fetches top 10 in stats by category for a given season
-# Stats include => passingYards, rushingYards, receivingYards, totalTackles, sacks, kickoffYards, interceptions, passingTouchdowns, quarterbackRating, rushingTouchdowns, receptions, receivingTouchdowns, totalPoints, totalTouchdowns, puntYards, passesDefended
-
 from typing import Optional, Dict
 from nfl_api_client.endpoints._base import BaseEndpoint
 from nfl_api_client.lib.endpoint_registry import ENDPOINT_REGISTRY
@@ -30,4 +27,5 @@ class PlayerCareerStats(BaseEndpoint):
 
 if __name__ == "__main__":
     leaders = PlayerCareerStats(player_id=3139477)
-    print(leaders.get_dataset("RECEIVING").get_data_frame())
+    print(leaders.get_dataset("DEFENSE").get_dataframe())
+    print(leaders.get_all_dataset_names())

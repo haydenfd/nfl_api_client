@@ -11,7 +11,7 @@ nav:
   - API Reference:
     - Overview: api_reference.md
     - Endpoints:
-        # - Player Career Statistics: player_career_stats.md
+        - Player Career Statistics: player_career_stats.md
         - Team Roster: team_roster.md
         - Team Depth Chart: team_depth_chart.md
         - Team Schedule: team_schedule.md

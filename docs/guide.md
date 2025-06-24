@@ -12,7 +12,7 @@ Each class invocation => Specific endpoint -> RequestService makes HTTP call -> 
 
 The endpoint docs are structured in a manner to expose you to each dataset returned by the endpoint, and the headers/columns returned for each data set. Depending on the nature of the endpoint, there might be 1 or multiple data sets. To access each dataset, use `get_dataset(<INSERT NAME>)`. 
 
-On accessing each data set, you have three utility functions that can be used to return data in the desired format. These include - `get_dict()`, `get_json()`, and `get_data_frame()`. 
+On accessing each data set, you have three utility functions that can be used to return data in the desired format. These include - `get_dict()`, `get_json()`, and `get_dataframe()`. 
 
 ### Raw data
 
