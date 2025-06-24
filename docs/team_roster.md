@@ -30,7 +30,7 @@ chiefs_roster = TeamRoster(team_id=TeamID.KC)
 
 # Get the dataframe head and column data types
 
-data_frame = chiefs_roster.get_dataset("TEAM_ROSTER").get_data_frame()
+data_frame = chiefs_roster.get_dataset("TEAM_ROSTER").get_dataframe()
 print(df.head())
 print(df.dtypes)
 

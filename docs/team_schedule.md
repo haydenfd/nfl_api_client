@@ -41,7 +41,7 @@ falcons_2022_post_season = TeamSchedule(
     season_type=SeasonTypeID.POST
     )
 
-df = bengals_schedule.get_dataset("TEAM_SCHEDULE").get_data_frame()        
+df = bengals_schedule.get_dataset("TEAM_SCHEDULE").get_dataframe()        
 
 ```
 

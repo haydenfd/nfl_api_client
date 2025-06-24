@@ -1,6 +1,6 @@
 # Game Officials
 
-Returns the game officials given a game ID. Returns 1 dataset `GAME_OFFICIALS` that contains 1 row. 
+Returns the game officials given a game ID. Returns 1 dataset, `GAME_OFFICIALS`, which contains 1 row. 
 
 ## Import 
 
@@ -22,7 +22,7 @@ from nfl_api_client.endpoints.game_officials import GameOfficials
 
 superbowl_25_game_officials = GameOfficials(game_id = 401671889)
 
-print(game_officials.get_dataset("GAME_OFFICIALS").get_data_frame())
+print(game_officials.get_dataset("GAME_OFFICIALS").get_dataframe())
 
 ```
 

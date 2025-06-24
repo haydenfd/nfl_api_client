@@ -9,11 +9,12 @@ class DataSetContainer:
     def __len__(self):
         return len(self._data_sets)
 
-    def __iter__(self):
-        return iter(self._data_sets.values())
+    def get_dataset(self, name: str) -> DataSet:
+        key = name.upper()
+        if key not in self._data_sets:
+            raise ValueError(f"Dataset '{name}' not found. Available datasets: {', '.join(self._data_sets.keys())}")
+        return self._data_sets[key]
 
-    def get_by_name(self, name: str) -> DataSet:
-        return self._data_sets[name.upper()]
-
-    def get_all(self) -> Dict[str, DataSet]:
-        return self._data_sets
+    def get_all_dataset_names(self) -> List[str]:
+        return list(self._data_sets.keys())
+    

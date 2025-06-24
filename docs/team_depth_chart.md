@@ -26,7 +26,7 @@ from nfl_api_client.lib.parameters import TeamID
 
 ravens_depth_25 = TeamDepthChart(team_id = TeamID.BAL, year = 2024)
 
-ravens_offense_25 = ravens_depth_25.get_dataset("OFFENSE").get_data_frame()        
+ravens_offense_25 = ravens_depth_25.get_dataset("OFFENSE").get_dataframe()        
 ravens_defense_25 = ravens_depth_25.get_dataset("DEFENSE").get_dict()
 ravens_special_25 = ravens_depth_25.get_dataset("SPECIAL_TEAMS").get_dict()        
 
