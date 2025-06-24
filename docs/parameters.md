@@ -41,9 +41,9 @@
 
 
 
-## SeasonType
+## SeasonTypeID
 
-| Season Type     | Value |
+| Season Type     | Season Type ID |
 |------------------|--------|
 | Preseason        | 1      |
 | Regular Season   | 2      |
@@ -51,9 +51,9 @@
 | Offseason        | 4      |
 
 
-## ConferenceType
+## ConferenceTypeID
 
-| Conference | Value |
+| Conference | Conference ID |
 |------------|--------|
 | AFC        | 8      |
 | NFC        | 9      |
