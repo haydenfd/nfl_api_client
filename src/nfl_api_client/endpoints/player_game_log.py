@@ -8,7 +8,6 @@ class PlayerGameLog(BaseEndpoint):
     def __init__(
         self,
         player_id: int,
-        # season_type: SeasonTypeID = 2,
         *,
         headers: Optional[Dict[str, str]] = None,
         proxy: Optional[str] = None,
@@ -23,4 +22,4 @@ class PlayerGameLog(BaseEndpoint):
             timeout=timeout,
         )        
 
-print(PlayerGameLog(3139477).get_dataset("PASSING").get_data_frame())
+# print(PlayerGameLog(3139477).get_dataset("RUSHING").get_dict())

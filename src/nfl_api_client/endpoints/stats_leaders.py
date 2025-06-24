@@ -20,7 +20,7 @@ class StatsLeaders(BaseEndpoint):
         from nfl_api_client.endpoints.stats_leaders import StatsLeaders
 
         leaders = StatsLeaders(year=2024)
-        passing_df = leaders.get_dataset("PASSINGYARDS").get_data_frame()
+        passing_df = leaders.get_dataset("PASSINGYARDS").get_dataframe()
         print(passing_df.head())
         ```
     """

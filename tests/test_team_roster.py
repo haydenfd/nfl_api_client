@@ -3,7 +3,7 @@ import pytest
 
 def test_team_roster_fetch():
     roster = TeamRoster(team_id=12)
-    df = roster.get_dataset("TEAM_ROSTER").get_data_frame()
+    df = roster.get_dataset("TEAM_ROSTER").get_dataframe()
     assert not df.empty
     assert "player_id" in df.columns
     assert len(df.columns) == 16

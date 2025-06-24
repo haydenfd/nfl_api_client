@@ -52,4 +52,4 @@ class SeasonStandingsExpanded(BaseEndpoint):
 
 if __name__ == "__main__":
     standings = SeasonStandingsExpanded(season=2024, group="division")
-    print(standings.get_dataset("AFC WEST").get_data_frame())
+    print(standings.get_dataset("AFC WEST").get_dataframe())
