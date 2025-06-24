@@ -13,7 +13,7 @@ class TeamDepthChart(BaseEndpoint):
     # The response is organized into three datasets: `"OFFENSE"`, `"DEFENSE"`, and `"SPECIAL_TEAMS"`.
 
     # Each dataset can be accessed via `.get_dataset("OFFENSE")`, etc., and supports rich utility methods
-    # such as `.get_data_frame()`, `.get_dict()`, `.get_headers()`, and `.get_json()`.
+    # such as `.get_dataframe()`, `.get_dict()`, `.get_headers()`, and `.get_json()`.
 
     # Args:
     #     team_id (Union[int, TeamID]): The ESPN NFL team ID, or a member of the `TeamID` enum.
@@ -32,7 +32,7 @@ class TeamDepthChart(BaseEndpoint):
     #     # chart = TeamDepthChart(team_id=TeamID.KC, year=2024)
 
     #     # Get the offensive depth chart as a DataFrame
-    #     offense_df = chart.get_dataset("OFFENSE").get_data_frame()
+    #     offense_df = chart.get_dataset("OFFENSE").get_dataframe()
     #     print(offense_df.head())
 
     #     # Get the defensive chart headers
@@ -82,12 +82,12 @@ class TeamDepthChart(BaseEndpoint):
             timeout=timeout,
         )
 
-chart = TeamDepthChart(team_id=33, year=2024)
+# chart = TeamDepthChart(team_id=33, year=2024)
 
-offense_df = chart.get_dataset("OFFENSE").get_data_frame()
-print(offense_df.head())
+# offense_df = chart.get_dataset("OFFENSE").get_dataframe()
+# print(offense_df.head())
 
-defense_headers = chart.get_dataset("DEFENSE").get_headers()
-print(defense_headers)
+# defense_headers = chart.get_dataset("DEFENSE").get_headers()
+# print(defense_headers)
 
-print(chart.get_url())
+# print(chart.get_url())

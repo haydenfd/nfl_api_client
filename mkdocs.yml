@@ -15,9 +15,10 @@ nav:
         - Team Roster: team_roster.md
         - Team Depth Chart: team_depth_chart.md
         - Team Schedule: team_schedule.md
-        - Season Standings (Basic): season_standings.md
+        # - Season Standings (Basic): season_standings.md
         - Season Statistics Leaders: stats_leaders.md
         - Game Officials: game_officials.md
+        - Game Boxscore Statistics (Team): game_team_stats.md
         # - Season Standings (Expanded): season_standings_expanded.md
         # - Season Standings (Playoff Picture): season_standings_playoffs.md
     - Parameters: parameters.md

@@ -3,6 +3,9 @@
 
 ## TeamID
 
+```python
+from nfl_api_client.lib.parameters import TeamID
+```
 
 | Abbreviation | Team ID |
 |--------------|---------|
@@ -43,6 +46,11 @@
 
 ## SeasonTypeID
 
+```python
+from nfl_api_client.lib.parameters import SeasonTypeID
+```
+
+
 | Season Type     | Season Type ID |
 |------------------|--------|
 | Preseason        | 1      |
@@ -52,6 +60,11 @@
 
 
 ## ConferenceTypeID
+
+```python
+from nfl_api_client.lib.parameters import ConferenceTypeID
+```
+
 
 | Conference | Conference ID |
 |------------|--------|

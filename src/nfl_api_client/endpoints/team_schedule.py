@@ -32,5 +32,5 @@ class TeamSchedule(BaseEndpoint):
 
 # schedule = TeamSchedule(team_id=TeamID.KC, year=2025)
 # schedule.get_data_sets()
-# df = schedule.get_dataset("TEAM_SCHEDULE").get_data_frame()   
+# df = schedule.get_dataset("TEAM_SCHEDULE").get_dataframe()   
 # print(df)
