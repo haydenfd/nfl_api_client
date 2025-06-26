@@ -1,6 +1,65 @@
 # Guide
 
 This guide will go over how to use each endpoint to access data, and what the data access features are. 
+<!-- 
+## Data Access Patterns
+
+The package is structured such that each endpoint returns a container of datasets. Depending on the nature of the endpoint, this container may hold either one or multiple different datasets. A dataset in this context is a related grouping of data. For example, a team will have 3 different datasets for its depth chart - Offense, Defense, and Special Teams. 
+
+To access the individual datasets, you must first get the particular dataset by name. 
+
+Then, there are 3 utility functions to render the data in your desired format - `get_json()`, `get_dict()`, and `get_dataframe()`. 
+
+
+```python
+# Call endpoint, which loads the dataset container
+team_depth_chart = TeamDepthChart(team_id = 12) 
+
+# Access the desired dataset 
+offense = team_depth_chart.get_dataset_by_name("OFFENSE") 
+
+ # Print out dataset in dataframe format 
+print(offense.get_dataframe())
+```
+
+Conversely, you can also chain the above functions. 
+
+```python
+TeamDepthChart(team_id = 12).get_dataset_by_name("OFFENSE").get_dataframe()
+```
+
+The documentation for each endpoint is structured such that it lists all available datasets under that endpoint, and the individual headers/columns/keys in the returned data. 
+
+You can also view all available dataset names inside a container by using `get_all_dataset_names()` on the particular endpoint object. 
+For example, 
+
+```python
+TeamDepthChart(team_id = 12).get_all_dataset_names() 
+# OUTPUT: ["OFFENSE", "DEFENSE", "SPECIAL_TEAMS"]
+```
+
+
+### Raw ESPN response
+
+This package parses the JSON data returned from ESPN's API endpoints into a well-formed response. A large chunk of each returned response is thrown away by these parsers for lack of relevancy. However, if you would like to access the raw JSON that is returned, you can use `get_raw_json()` at the endpoint level. 
+
+
+```python
+PlayerCareerStats(player_id = 3139477).get_raw_json() 
+# OUTPUT: Big JSON load
+```
+
+If you would like to access the exact URL that the request is being made to, you can also access `get_url()` at the endpoint level. 
+This will return a string of the URL with the query and path parameters embedded. You can copy-paste this URL into your browser or a cURL client such as Postman to inspect the response. 
+
+
+```python
+PlayerCareerStats(player_id = 3139477).get_url() 
+# OUTPUT: "https://site.web.api.espn.com/apis/common/v3/sports/football/nfl/athletes/3139477/stats?seasontype=2"
+```
+
+
+
 
 
 ## **Package Structure**
@@ -26,47 +85,4 @@ Player IDs for both active and inactive players is accessible as a list through 
 Limitation - ESPN only holds information for years past around the 1980s, which shouldn't be an issue for virtually all use-cases but is worth mentioning. 
 
 For IDs pertinent to teams, you can either directly inject the integer values of each team (See full list here), or you can make use of the enum we have provided to directly inject the values based on the team's code. Here is how to use that. 
-
-
-## **Request Configuration**
-
-
-### Default request parameters 
-
-By default, all requests are routed with no proxy URL and with a timeout set to 10 seconds, which we have found is ample time. These are the headers used:
-
-```python
-"User-Agent":   "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
-                "AppleWebKit/537.36 (KHTML, like Gecko)"
-                "Chrome/123.0.0.0 Safari/537.36",
-
-"Accept": "application/json",
-
-"Accept-Language": "en-US,en;q=0.9",
-```
-<br>
-### Customize your requests
-
-You can also set custom HTTP request headers, proxy URLs, and a timeout with each request sent to an endpoint. These three variables can be specified in each function call as parameters. The endpoint documentation under the API reference excluded including these for brevity. This allows you to have more fine-grained control over your requests. Additionally, in cases where your requests *might* be blocked from a cloud provider such as AWS (we have not confirmed that this is the case) and would need a proxy to route requests through. 
-
-
-If you would like to set custom configurations, here is how you would do it: 
-
-
-```python
-
-custom_headers = {...}
-proxy_url =  "https://fakeproxy.com"
-extended_timeout = 30
-
-sample_stats = PlayerCareerStats(
-    player_id=4262921,
-    headers = custom_headers,
-    proxy = proxy_url,
-    timeout = extended_timeout,
-    )
-```
-
-!!! NOTE
-
-    These 3 request parameters must be set by **keyword** arguments only. Doing something like (custom_headers, proxy, timeout) without specifying the "headers = ", for instance, will return an error! This is a deliberate design choice to avoid confusion when setting custom configs. 
+ -->

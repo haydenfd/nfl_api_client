@@ -7,9 +7,12 @@ repo_name: haydenfd/nfl_api_client
 
 nav:
   - Home: index.md
-  - Guide: guide.md
-  - API Reference:
-    - Overview: api_reference.md
+  - Guide: 
+    - Overview: guide.md
+    - Data Access: data_access.md
+    - HTTP Request Configuration: request_config.md
+  - Reference:
+    - Overview: reference.md
     - Endpoints:
         - Player Career Statistics: player_career_stats.md
         - Team Roster: team_roster.md
@@ -28,6 +31,7 @@ plugins:
   - search
   - mkdocstrings:
       default_handler: python
+  - mermaid2
 
 watch:
   - src
