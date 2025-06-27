@@ -84,10 +84,5 @@ class TeamDepthChart(BaseEndpoint):
 
 # chart = TeamDepthChart(team_id=33, year=2024)
 
-# offense_df = chart.get_dataset("OFFENSE").get_dataframe()
-# print(offense_df.head())
-
-# defense_headers = chart.get_dataset("DEFENSE").get_headers()
-# print(defense_headers)
-
-# print(chart.get_url())
+# offense_df = chart.get_dataset("SPECIAL_TEAMS").get_dataframe()
+# print(offense_df)

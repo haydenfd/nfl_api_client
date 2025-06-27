@@ -96,7 +96,7 @@ from nfl_api_client.static.players import (
 
 # Get all player entries with ID, name, and active status
 all_players = get_players()
-print(all_players[:5])  # Preview the first 5 players
+print(all_players[:5])  # Preview the first 5 players, but each player is an object
 
 # Find a player by their unique ESPN player ID
 player = find_player_by_id("2976316")
@@ -137,3 +137,6 @@ print(roster_raw_id.get_raw_json())
 roster_enum = TeamRoster(team_id=TeamID.LAC)
 print(roster_enum.get_raw_json())
 ```
+
+
+You can also do the same with other types of ID Enums in `nfl_api_client.lib.parameters`.
