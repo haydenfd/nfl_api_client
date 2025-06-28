@@ -4,11 +4,13 @@ Welcome to the documentation for the `nfl_api_client` (Current version: 1.0.0).
 
 ## **About**
 
-`nfl_api_client` is a Python package that provides a simple and flexible interface for accessing ESPN's NFL data. This package makes it easy to fetch exactly the data points you need. 
-Features: 
-    - Elaborate documentation with examples for each endpoint. 
-    - Ability to configure your HTTP requests.
-    - Access to the raw ESPN response data and request URLs. 
+`nfl_api_client` provides a simple and flexible interface to query ESPN's NFL data endpoints. Whether you're building tools, performing research, or just exploring stats, this package makes it easy to retrieve exactly the NFL data you need.
+
+**Key Features**:
+
+- Rich documentation with examples for each endpoint
+- Fully configurable HTTP requests
+- Access to raw ESPN responses and resolved request URLs
 
 
 !!! Note
@@ -18,7 +20,7 @@ Features:
 
 ### Installation
 
-This package requires Python `3.9+` and uses `httpx` and `pandas` as dependencies for fetching and processing the data.
+Python `3.9+` is required. The package depends on `httpx` and pandas.
 
 To install the package and its dependencies, run 
 
@@ -30,11 +32,12 @@ pip install nfl-api-client
 
 - Guide: Includes how to go about accessing data returned from endpoints, static data like player and team IDs, and customizing your HTTP requests. 
 - Reference: Documentation for various endpoints. 
+- CHANGELOG: Updates made to package source code. 
 
 
 ## **Contributing**
 
-There are many endpoints that still need to be built out. If you would like to contribute, please send an email to haydenfds@gmail.com. Everyone is welcome!
+There are many endpoints that still need to be built out. If you would like to contribute, please send an email to **haydenfds@gmail.com**. Everyone is welcome!
 
 ## **License**
 

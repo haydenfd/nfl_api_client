@@ -38,7 +38,7 @@ ravens_special = ravens_depth_25.get_dataset("SPECIAL_TEAMS").get_dict()
 ```
 
 
-## **Dataset Keys**
+## **Data Fields**
 
 All 3 of the above datasets return the same keys. 
 

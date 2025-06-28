@@ -52,7 +52,7 @@ df = bengals_schedule.get_dataset("TEAM_SCHEDULE").get_dataframe()
 ```
 
 
-## **Data Headers/Keys**
+## **Data Fields**
 
 ### TEAM_SCHEDULE
 

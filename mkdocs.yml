@@ -8,17 +8,16 @@ repo_name: haydenfd/nfl_api_client
 nav:
   - Home: index.md
   - Guide: 
-    - Overview: guide.md
     - Data Access: data_access.md
     - HTTP Request Configuration: request_config.md
   - Reference:
     - Endpoints:
         - Team Roster: team_roster.md # DONE
         - Team Depth Chart: team_depth_chart.md # DONE
-        - Team Schedule: team_schedule.md # DONE??
+        - Team Schedule: team_schedule.md # DONE
         - Game Officials: game_officials.md # DONE
-        - Season Standings (Basic): season_standings.md
-        - Season Statistics Leaders: stats_leaders.md
+        - Season Standings (Basic): season_standings.md # DONE
+        - Season Statistics Leaders: stats_leaders.md # DONE
         # - Game Boxscore Statistics (Team): game_team_stats.md
         # - Player Career Statistics: player_career_stats.md
         # - Season Standings (Expanded): season_standings_expanded.md

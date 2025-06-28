@@ -1,14 +1,17 @@
 # Data Access
 
-This section touches on how to access data from various dynamic endpoints, how to access static data (such as player IDs, names),team IDs, and other IDs pertinent to the requests. 
+This section explains how to retrieve data from dynamic endpoints, access static resources such as player and team IDs, and use various configuration options to tailor your requests.
 
-## Package Structure
+## **Package Structure**
 
-The package is structured such that each endpoint returns a container of datasets. Depending on the nature of the endpoint, this container may hold either one or multiple different datasets. A dataset in this context is a related grouping of data. For example, a team will have 3 different datasets for its depth chart - Offense, Defense, and Special Teams. 
+This package is organized so that each endpoint returns a container of datasets. Depending on the endpoint, this container may include one or multiple datasets. A dataset is a logically grouped set of related data. For example, the TeamDepthChart endpoint returns three datasets: "OFFENSE", "DEFENSE", and "SPECIAL_TEAMS".
 
-To access the individual datasets, you must first get the particular dataset by name. 
+### **Accessing Endpoint Data**
+To work with endpoint data:
 
-Then, there are 3 utility functions to render the data in your desired format - `get_json()`, `get_dict()`, and `get_dataframe()`. 
+1. Instantiate the endpoint.
+2. Access the dataset by name.
+3. Render the dataset using utility methods: `get_json()`, `get_dict()`, or `get_dataframe()`.
 
 
 ```python
@@ -22,16 +25,13 @@ offense = team_depth_chart.get_dataset_by_name("OFFENSE")
 print(offense.get_dataframe())
 ```
 
-Conversely, you can also chain the above functions. 
+You can also chain the above functions. 
 
 ```python
 TeamDepthChart(team_id = 12).get_dataset_by_name("OFFENSE").get_dataframe()
 ```
 
-The documentation for each endpoint is structured such that it lists all available datasets under that endpoint, and the individual headers/columns/keys in the returned data. 
-
-You can also view all available dataset names inside a container by using `get_all_dataset_names()` on the particular endpoint object. 
-For example, 
+To list all available dataset names returned by an endpoint:
 
 ```python
 TeamDepthChart(team_id = 12).get_all_dataset_names() 
@@ -54,11 +54,12 @@ graph TD
 
 
 !!! Note
-    The list of datasets (internally) is actually stored as a dictionary mapping of the dataset name to its associated data.
+    The list of datasets (internally) is stored as a dictionary mapping of the dataset name to its associated data.
 
 
-### Raw ESPN JSON 
-This package parses the JSON data returned from ESPN's API endpoints into a well-formed response. A large chunk of each returned response is thrown away by these parsers for lack of relevancy. However, if you would like to access the raw JSON that is returned, you can use `get_raw_json()` at the endpoint level. 
+### **Raw Data & URLs**
+
+This package parses the raw JSON returned from ESPN's API endpoints into a well-formed response. A large chunk of each raw response is thrown away by these parsers for brevity/relevancy. However, if you would like to access the raw JSON that is returned, you can use `get_raw_json()` on the endpoint object. 
 
 
 ```python
@@ -66,10 +67,10 @@ PlayerCareerStats(player_id = 3139477).get_raw_json()
 # OUTPUT: Big JSON load
 ```
 
-### ESPN API Request URL 
+### **Inspecting Request URL** 
 
-If you would like to access the exact URL that the request is being made to, you can also access `get_url()` at the endpoint level. 
-This will return a string of the URL with the query and path parameters embedded. You can copy-paste this URL into your browser or a cURL client such as Postman to inspect the response. 
+If you would like to access the exact URL that the request is being made to, you can also access `get_url()` on the endpoint object.  
+You can copy-paste this URL into your browser or a cURL client such as Postman to inspect the raw response. 
 
 
 ```python
@@ -78,12 +79,12 @@ PlayerCareerStats(player_id = 3139477).get_url()
 # OUTPUT: "https://site.web.api.espn.com/apis/common/v3/sports/football..."
 ```
 
-## Player Data
+## **Player Data**
 
-Many endpoints rely on providing specific NFL player IDs. ESPN maintains its own mapping of player to player IDs. You can access the list of player IDs using package.
+Some endpoints require ESPN player IDs. The package provides utilities to look up and search for players.
 
+`nfl_api_client.lib.data` stores an exhaustive list of all player names alongwith their associated IDs. You can use the functions shown below to filter and search through the players based on their name, ID, or active/inactive status. 
 
-This returns a list of players with their player ID, names, and active status. You also have the ability of filtering out players by searching for names or searching by active. Regex functionality is also supported. 
 
 ```python
 from nfl_api_client.static.players import (
@@ -93,6 +94,8 @@ from nfl_api_client.static.players import (
     find_players_by_first_name,
     find_players_by_last_name,
 )
+
+from nfl_api_client.lib.data import players
 
 # Get all player entries with ID, name, and active status
 all_players = get_players()
@@ -118,12 +121,17 @@ print(first_name_matches)
 active_macks = [p for p in find_players_by_last_name("Mack") if p["is_active"]]
 print(active_macks)
 
-
 ```
 
-## Parameters
+## **Parameters**
 
-Certain endpoints, such as team roster, require providing an ESPN team ID. To make access easy, you can see Reference > Parameters for the mapping of team codes to IDs. Under the hood, each ID is an integer. For endpoints that require such IDs, you can either directly inject the integer ID of the team, or you can make use of the provided Enum. 
+Certain endpoints (like TeamRoster) require an ESPN team ID. These can be passed in two ways:
+
+- As a raw integer
+- Using the provided TeamID Enum for clarity
+
+This applies for other endpoints that require a specific Season Type or Conference ID. You can get more clarification on which entities have which IDs by looking at the [Parameters](parameters.md) section for more information. 
+
 
 ```python
 from nfl_api_client.endpoints.team_roster import TeamRoster
@@ -137,6 +145,3 @@ print(roster_raw_id.get_raw_json())
 roster_enum = TeamRoster(team_id=TeamID.LAC)
 print(roster_enum.get_raw_json())
 ```
-
-
-You can also do the same with other types of ID Enums in `nfl_api_client.lib.parameters`.

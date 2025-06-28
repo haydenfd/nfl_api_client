@@ -21,7 +21,7 @@ def TeamRosterParser(json_data):
                 "weight": int(player.get("weight")),
                 "height": int(player.get("height")),
                 "age": int(player.get("age")) if player.get("age") is not None else None,
-                "dob": date or None,
+                "date_of_birth": date or None,
                 "college": player.get("college", {}).get("name"),
                 "jersey_number": player.get("jersey"),
                 "position_name": player.get("position", {}).get("displayName"),

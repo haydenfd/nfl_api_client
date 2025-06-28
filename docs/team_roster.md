@@ -39,7 +39,7 @@ data_frame = chiefs_roster.get_dataset("TEAM_ROSTER").get_dataframe()
 ["TEAM_ROSTER"]
 ```
 
-## **Dataset Keys**
+## **Data Fields**
 
 ### TEAM_ROSTER
  
@@ -54,7 +54,7 @@ data_frame = chiefs_roster.get_dataset("TEAM_ROSTER").get_dataframe()
     "weight": int,
     "height": int, # Listed in inches
     "age": int or None,
-    "dob": str or None,
+    "date_of_birth": str or None,
     "college": str,
     "jersey_number", int,
     "position_name": str: 

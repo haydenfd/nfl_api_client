@@ -25,6 +25,6 @@ class PlayerCareerStats(BaseEndpoint):
         )
 
 
-if __name__ == "__main__":
-    leaders = PlayerCareerStats(player_id=3139477)
-    print(leaders.get_url())
+
+# josh_allen = PlayerCareerStats(player_id=3918298)
+# print(josh_allen.get_dataset("PASSING").get_dataframe())

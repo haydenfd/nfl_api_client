@@ -5,7 +5,7 @@ CDN_URL = "https://cdn.espn.com/core/nfl"
 
 #fmt: off
 ENDPOINT_REGISTRY = {
-    "TEAM_SCHEDULE":                    f"{SITE_URL}/teams/{{team_id}}/schedule",
+    "TEAM_SCHEDULE":                    f"{SITE_URL}/teams/{{team_id}}/schedule?season={{season}}",
     "TEAM_ROSTER":                      f"{SITE_URL}/teams/{{team_id}}/roster",
     "SEASON_STANDINGS":                 f"{CDN_URL}/standings?xhr=1&season={{season}}&view={{view}}&group={{group}}",
     "TEAM_DEPTH_CHART":                 f"{CORE_URL}/seasons/{{year}}/teams/{{team_id}}/depthcharts",

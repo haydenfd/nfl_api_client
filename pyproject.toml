@@ -16,7 +16,8 @@ keywords = ["nfl", "espn", "api", "football", "sports", "betting"]
 packages = [{ include = "nfl_api_client", from = "src" }]
 
 [project.urls]
-Repository = "https://github.com/haydenfd/nfl-api"
+Repository = "https://github.com/haydenfd/nfl_api_client"
+Documentation = "https://nfl-api-client.readthedocs.io/en/latest/"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

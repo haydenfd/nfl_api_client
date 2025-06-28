@@ -10,6 +10,12 @@ from nfl_api_client.endpoints.season_standings import SeasonStandings
 
 ## **Parameters**
 
+| **Name** | **Type** | **Description**                                                                                    | **Required** |
+| :------- | :------: | :------------------------------------------------------------------------------------------------- | :----------: |
+| `season` |   `int`  | Season year in `YYYY` format. Default = `2024`                                                     |      No      |
+| `group`  |   `str`  | Grouping mode. Must be one of `"league"`, `"conference"`, or `"division"`. Default = `"league"` |      No      |
+
+
 ## **Examples**
 
 ```python
@@ -67,7 +73,7 @@ Returned dataset names vary based on the group value.
 ```
 
 
-## **Dataset Keys**
+## **Data Fields**
 
 All of the above datasets return the same fields. 
 
