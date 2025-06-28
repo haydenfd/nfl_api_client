@@ -1,5 +1,5 @@
 from typing import Dict, List
-from nfl_api_client.lib.utils import format_date_str
+from nfl_api_client.lib.utils import format_utc_date_str
 from nfl_api_client.lib.parameters import TeamID, SeasonTypeID
 
 team_code_to_id_map = {team.name: team.value for team in TeamID}
@@ -38,7 +38,7 @@ def TeamScheduleParser(data: dict) -> Dict[str, List[Dict]]:
             "game_id": game_id,
             "week_number": week_number,
             "season_type": season_type,
-            "date": format_date_str(date),
+            "date": format_utc_date_str(date),
             "game_title": title,
             "home_team_id": home_team_id,
             "home_team_code": home_team_code,

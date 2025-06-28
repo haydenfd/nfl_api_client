@@ -1,4 +1,3 @@
-# src/nfl_api/scripts/generate_active_players.py
 # Script that fetches the active (for now) players and writes to src/nfl_api/lib/data.py
 # [PLAYER_ID: int, FIRST_NAME: str, LAST_NAME: str, FULL_NAME: str, IS_ACTIVE: BOOLEAN]. For active players, is_active will always be true. 
 

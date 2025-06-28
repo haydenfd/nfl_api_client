@@ -1,6 +1,18 @@
 import re
 from typing import Optional 
 from datetime import datetime
+import pytz
+
+def format_utc_date_str(date_str: str) -> str:
+
+    utc_time = datetime.strptime(date_str, "%Y-%m-%dT%H:%MZ")
+    utc_zone = pytz.timezone("UTC")
+    eastern_zone = pytz.timezone("US/Eastern")
+
+    utc_aware = utc_zone.localize(utc_time)
+    eastern_time = utc_aware.astimezone(eastern_zone)
+
+    return eastern_time.strftime("%m-%d-%Y")
 
 def format_date_str(date_str):
     return datetime.strptime(date_str, "%Y-%m-%dT%H:%MZ").strftime("%m-%d-%Y")

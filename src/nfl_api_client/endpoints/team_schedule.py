@@ -11,7 +11,7 @@ class TeamSchedule(BaseEndpoint):
     def __init__(
             self, 
             team_id: Union[int, TeamID], 
-            year: int = 2025,
+            season: int = 2025,
             *,
             headers: Optional[Dict[str, str]] = None,
             proxy: Optional[str] = None,
@@ -21,7 +21,7 @@ class TeamSchedule(BaseEndpoint):
         if isinstance(team_id, TeamID):
             team_id = team_id.value
 
-        url = self.BASE_URL.format(team_id=team_id, year=year)
+        url = self.BASE_URL.format(team_id=team_id, season=season)
         super().__init__(
             url=url, 
             parser=TeamScheduleParser,
@@ -29,8 +29,3 @@ class TeamSchedule(BaseEndpoint):
             proxy=proxy,
             timeout = timeout,
         )
-
-# schedule = TeamSchedule(team_id=TeamID.KC, year=2025)
-# schedule.get_data_sets()
-# df = schedule.get_dataset("TEAM_SCHEDULE").get_dataframe()   
-# print(df)

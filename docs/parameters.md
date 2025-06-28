@@ -53,10 +53,10 @@ from nfl_api_client.lib.parameters import SeasonTypeID
 
 | Season Type     | Season Type ID |
 |------------------|--------|
-| Preseason        | 1      |
-| Regular Season   | 2      |
-| Postseason       | 3      |
-| Offseason        | 4      |
+| PRE (Preseason)        | 1      |
+| REG (Regular season)   | 2      |
+| POST (Post season)       | 3      |
+| OFF (Off season)        | 4      |
 
 
 ## ConferenceTypeID

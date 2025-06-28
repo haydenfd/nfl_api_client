@@ -42,10 +42,10 @@ class TeamID(Enum):
     Season types => Preseason, Regular season, Postseason, Offseason
 '''
 class SeasonTypeID(Enum):
-    PRE_SEASON = 1
-    REGULAR_SEASON = 2
-    POST_SEASON = 3 
-    OFF_SEASON = 4 
+    PRE = 1
+    REG = 2
+    POST = 3 
+    OFF = 4 
 
 '''
     Mapping for conference types to values
