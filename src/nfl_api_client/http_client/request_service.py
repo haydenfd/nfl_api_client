@@ -1,6 +1,7 @@
 import httpx
 import asyncio
 from typing import List, Optional, Dict, Union
+import sys
 
 DEFAULT_HEADER_CONFIG = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -27,7 +28,7 @@ class HttpxRequestService:
     
 
     def send_request(self, url: str) -> Union[Dict, None]:
-        # print("RAN")
+
         try:
             with httpx.Client(
                 headers=self.headers,
@@ -41,7 +42,11 @@ class HttpxRequestService:
                 return response.json()
             
         except httpx.HTTPStatusError as e: 
-            print(f"Error: HTTP error {e.response.status_code}: {e.request.url}")
+            if e.response.status_code == 404:
+                print(f"Error: Request URL is not valid. Please check the arguments you have provided.")
+                sys.exit(1)
+            else: 
+                print(f"Error: HTTP error {e.response.status_code}: {e.request.url}")
         except httpx.TimeoutException as e:
             print(f"Error: Request to url {url} timed out")
         except httpx.RequestError as e:
