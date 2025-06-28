@@ -8,7 +8,7 @@ class GameOfficials(BaseEndpoint):
 
     def __init__(
             self,
-            game_id: int,
+            game_id: str,
             *,
             headers: Optional[Dict[str, str]] = None,
             proxy: Optional[str] = None,
@@ -24,8 +24,8 @@ class GameOfficials(BaseEndpoint):
             timeout=timeout,
         )
 
-game_officials = GameOfficials(401671889)
-print(game_officials.get_dataset("GAME_OFFICIALS").get_dataframe())
+# game_officials = GameOfficials("401671889")
+# print(game_officials.get_dataset("GAME_OFFICIALS").get_dataframe())
 
 
 

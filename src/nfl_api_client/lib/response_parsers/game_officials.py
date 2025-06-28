@@ -5,7 +5,7 @@ def GameOfficialsParser(data):
     result = []
     officials_object = {}
     game_id = extract_id_from_ref(items[0].get('$ref'), "events")
-    officials_object['game_id'] = game_id
+    officials_object['game_id'] = str(game_id)
     for item in items:
         officials_object[item.get('position', {}).get('name', '').lower().replace(' ', '_')] = item.get('displayName')
     result.append(officials_object)
