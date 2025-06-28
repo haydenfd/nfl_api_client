@@ -48,11 +48,3 @@ class SeasonStandings(BaseEndpoint):
             proxy=proxy,
             timeout=timeout,
         )
-
-
-# if __name__ == "__main__":
-#     standings = SeasonStandings(season=2024, group="conference")
-#     print(standings.get_dataset("AFC").get_dataframe())
-#     standings = SeasonStandings(season=2024, group="league")
-#     print(standings.get_dataset("LEAGUE").get_dataframe())
-

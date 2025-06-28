@@ -13,14 +13,14 @@ nav:
     - HTTP Request Configuration: request_config.md
   - Reference:
     - Endpoints:
-        - Player Career Statistics: player_career_stats.md
-        - Team Roster: team_roster.md
-        - Team Depth Chart: team_depth_chart.md
-        - Team Schedule: team_schedule.md
-        # - Season Standings (Basic): season_standings.md
+        - Team Roster: team_roster.md # DONE
+        - Team Depth Chart: team_depth_chart.md # DONE
+        - Team Schedule: team_schedule.md # DONE??
+        - Game Officials: game_officials.md # DONE
+        - Season Standings (Basic): season_standings.md
         - Season Statistics Leaders: stats_leaders.md
-        - Game Officials: game_officials.md
-        - Game Boxscore Statistics (Team): game_team_stats.md
+        # - Game Boxscore Statistics (Team): game_team_stats.md
+        # - Player Career Statistics: player_career_stats.md
         # - Season Standings (Expanded): season_standings_expanded.md
         # - Season Standings (Playoff Picture): season_standings_playoffs.md
     - Parameters: parameters.md
