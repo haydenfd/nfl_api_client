@@ -2,19 +2,19 @@
 
 Returns the game officials given a game ID. Returns 1 dataset, `GAME_OFFICIALS`, which contains 1 row. 
 
-## Import 
+## **Import** 
 
 ``` python
 from nfl_api_client.endpoints.game_officials import GameOfficials
 ```
 
-## Parameters
+## **Parameters**
 
 | **Name**   | **Type** | **Description**                                                                | **Required** |
 |:-----------|:--------:|:------------------------------------------------------------                   |:------------ |
 | `game_id`  | `int`  | ESPN Game ID             | Yes                   |
 
-## Examples
+## **Examples**
 
 ```python
 
@@ -26,11 +26,17 @@ print(game_officials.get_dataset("GAME_OFFICIALS").get_dataframe())
 
 ```
 
-## Datasets
+## **Datasets**
 
+```python
+["GAME_OFFICIALS"]
+```
+
+
+## **Dataset Keys**
 
 ```python 
-GAME_OFFICIALS: [
+{
     "game_id": str,
     "referee": str,
     "head_linesman": str, 
@@ -39,5 +45,5 @@ GAME_OFFICIALS: [
     "umpire": str, 
     "field_judge": str, 
     "line_judge": str,
-    ]
+}
 ```

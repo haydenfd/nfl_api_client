@@ -3,22 +3,22 @@
 Fetches the full season schedule for a given team, season, and season type. Returns one dataset: `TEAM_SCHEDULE`.
 
 
-### Import 
+## **Import** 
 
 ``` python
 from nfl_api_client.endpoints.team_schedule import TeamSchedule
 ```
 
-### Parameters
+## **Parameters**
 
 | **Name**        | **Type**               | **Description**                                                                 | **Required** |
 |-----------------|------------------------|---------------------------------------------------------------------------------|--------------|
-| `team_id`       | `TeamID`/`int`      | The ID of the NFL team. Can use a `TeamID` enum or directly inject an `int`.   | Yes          |
+| `team_id`       | `TeamID` or `int`      | ESPN ID of NFL team. Can use `TeamID` value or inject an `int`.   | Yes          |
 | `season`        | `int`                  | Season year in `YYYY` format (e.g., `2024`). Default = `2025`.                  | No           |
-| `season_type`   | `SeasonTypeID`/`int`| Season type (`Pre` = 1, `Regular` = 2, `Post` = 3). Default = `Regular`.                   | No           |
+| `season_type`   | `SeasonTypeID` or `int`| Season type (`PRE` = 1, `REG` = 2, `POST` = 3). Default = `SeasonTypeID.REG`.                   | No           |
 
 
-### Examples
+## **Examples**
 
 ```python
 from nfl_api_client.endpoints.team_schedule import TeamSchedule
@@ -46,20 +46,27 @@ df = bengals_schedule.get_dataset("TEAM_SCHEDULE").get_dataframe()
 ```
 
 
-### Datasets 
+## **Datasets** 
 
-#### TEAM_SCHEDULE
-
+```python
+["TEAM_SCHEDULE"]
 ```
-[
-    "game_id",        
-    "week_number", 
-    "season_type",     
-    "date",
-    "game_title",
-    "home_team_id",  
-    "home_team_code",
-    "away_team_id", 
-    "away_team_code",
-]
+
+
+## **Data Headers/Keys**
+
+### TEAM_SCHEDULE
+
+```python
+{
+    "game_id": str,      
+    "week_number": str,
+    "season_type": str,
+    "date": str,
+    "game_title": str, 
+    "home_team_id": str,
+    "home_team_code": str,
+    "away_team_id": str, 
+    "away_team_code": str
+}
 ```

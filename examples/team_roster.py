@@ -6,7 +6,7 @@ _roster = TeamRoster(team_id=12)
 print(_roster.get_url())
 chiefs_roster = _roster.get_dataset("TEAM_ROSTER").get_dataframe()
 # print(chiefs_roster.get_dataset("TEAM_ROSTER").get_dataframe())
-subset = chiefs_roster[["full_name", "college"]]
+subset = chiefs_roster[["full_name", "experience"]]
 
 missing_info = subset
 
