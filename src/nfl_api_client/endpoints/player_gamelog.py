@@ -25,7 +25,7 @@ class PlayerGamelog(BaseEndpoint):
             timeout=timeout,
         )
 
-print(PlayerGamelog(player_id=3124005, season=2024).get_dataset("GAMELOG").get_dataframe().keys())
-print(PlayerGamelog(player_id=3139477, season=2024).get_dataset("GAMELOG").get_dataframe().keys())
-print(PlayerGamelog(player_id=3117251, season=2024).get_dataset("GAMELOG").get_dataframe().keys())
-print(PlayerGamelog(player_id=4262921, season=2024).get_dataset("GAMELOG").get_dataframe().keys())
+# print(PlayerGamelog(player_id=3124005, season=2024).get_dataset("GAMELOG").get_dataframe().keys())
+# print(PlayerGamelog(player_id=3139477, season=2024).get_dataset("GAMELOG").get_dataframe().keys())
+# print(PlayerGamelog(player_id=3117251, season=2024).get_dataset("GAMELOG").get_dataframe().keys())
+# print(PlayerGamelog(player_id=4262921, season=2024).get_dataset("GAMELOG").get_dataframe().keys())

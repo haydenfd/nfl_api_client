@@ -14,9 +14,9 @@ ENDPOINT_REGISTRY = {
     "PLAYER_CAREER_BASIC_STATS":        f"{WEB_URL}/athletes/{{player_id}}/stats?seasontype={{season_type}}",
     "LEAGUE_GAME_FINDER":               f"{SITE_URL}/scoreboard",
     "DRAFT_SUMMARY":                    f"{CORE_URL}/seasons/{{year}}/draft/rounds",
-    "GAME_SUMMARY":                     f"{SITE_URL}/summary?event={{game_id}}",
     "PLAYER_GAMELOG":                   f"{WEB_URL}/athletes/{{player_id}}/gamelog?season={{season}}",
     "GAME_OFFICIALS":                   f"{CORE_URL}/events/{{game_id}}/competitions/{{game_id}}/officials",
-    "GAME_SUMMARY":                     f"{SITE_URL}/summary?event={{game_id}}"
+    "GAME_SUMMARY":                     f"{SITE_URL}/summary?event={{game_id}}",
+    
 }
 # fmt: on
