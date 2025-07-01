@@ -8,7 +8,7 @@ The project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html
 ---
 
 
-## **[1.0.0] - 2025-06-28**
+## **[1.0.0] - 2025-07-01**
 
 ### Added
 - `TeamDepthChart`, `StatsLeaders`, `TeamSchedule`, `GameOfficials`, `SeasonStandings`, `TeamRoster`, `ScoringPlays`, `PlayerGamelog` endpoints added. 
