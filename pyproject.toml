@@ -1,7 +1,7 @@
 [project]
 name = "nfl-api-client"
-version = "1.0.0"
-description = "API client library for accessing NFL data on ESPN's API endpoints"
+version = "1.0.1"
+description = "Client package for accessing NFL data available on ESPN's API endpoints"
 authors = [
     {name = "Hayden D'Souza haydenfds@gmail.com"}
 ]
