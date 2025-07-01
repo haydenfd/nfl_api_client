@@ -15,7 +15,7 @@ ENDPOINT_REGISTRY = {
     "LEAGUE_GAME_FINDER":               f"{SITE_URL}/scoreboard",
     "DRAFT_SUMMARY":                    f"{CORE_URL}/seasons/{{year}}/draft/rounds",
     "GAME_SUMMARY":                     f"{SITE_URL}/summary?event={{game_id}}",
-    "PLAYER_GAME_LOG":                  f"{WEB_URL}/athletes/{{player_id}}/gamelog",
+    "PLAYER_GAMELOG":                   f"{WEB_URL}/athletes/{{player_id}}/gamelog?season={{season}}",
     "GAME_OFFICIALS":                   f"{CORE_URL}/events/{{game_id}}/competitions/{{game_id}}/officials",
     "GAME_SUMMARY":                     f"{SITE_URL}/summary?event={{game_id}}"
 }
